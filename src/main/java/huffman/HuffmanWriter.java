@@ -49,7 +49,6 @@ public class HuffmanWriter {
         // Prepare variables
         HuffmanEntity entity = new HuffmanEntity();
         Map<Character, Integer> map = new HashMap<>();
-        Pattern pattern = Pattern.compile("[\\w:\\d+]");
 
         String readFile = FileUtils.readFileToString(new File(filePath));
 
