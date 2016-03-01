@@ -7,6 +7,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Exchanger;
+import java.util.function.IntBinaryOperator;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
@@ -60,8 +61,12 @@ public class HuffmanWriter {
 
             String[] keyvals = s.split(":");
 
-            if(keyvals.length == 2 && !keyvals[0].isEmpty())
-                map.put(keyvals[0].charAt(0), Integer.parseInt(keyvals[1]));
+            if (keyvals.length == 2) {
+                if (keyvals[0].isEmpty()) {
+                    map.put(',', Integer.parseInt(keyvals[1]));
+                } else
+                    map.put(keyvals[0].charAt(0), Integer.parseInt(keyvals[1]));
+            }
         }
 
         entity.setOccurenceMap(map);
