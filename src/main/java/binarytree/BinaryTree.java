@@ -16,10 +16,6 @@ public class BinaryTree {
         return baseNode;
     }
 
-    public void setBaseNode(BinaryNode baseNode) {
-        this.baseNode = baseNode;
-    }
-
     public BinaryTree(BinaryNode baseNode) {
         this.baseNode = baseNode;
     }
